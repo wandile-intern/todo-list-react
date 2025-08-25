@@ -2,14 +2,18 @@
 A simple and responsive to-do list application built with React. Add tasks, mark them as complete, and stay organized—all in a sleek interface.
 
 # 🚀 Features
-✅ Add and delete tasks
+Add and delete tasks
 
-📌 Mark tasks as complete/incomplete
+Mark tasks as complete/incomplete
 
-🎨 Clean and responsive UI
+Clean and responsive UI
 
 # 🛠️ Tech Stack
+React
 
+JavaScript
+
+CSS
 
 # 🔗 Live Demo
 Check it out: https://wandile-intern.github.io/todo-list-react/
