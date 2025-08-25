@@ -12,4 +12,5 @@ A simple and responsive to-do list application built with React. Add tasks, mark
 
 
 # 🔗 Live Demo
-Check it out:
+Check it out: https://wandile-intern.github.io/todo-list-react/
+
