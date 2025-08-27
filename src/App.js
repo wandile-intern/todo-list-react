@@ -1,26 +1,30 @@
 import { useState } from "react";
+import TaskItem from "./TaskItem";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
 
-  
   const addTask = () => {
     if (input.trim() === "") return;
     setTasks([...tasks, { text: input, completed: false }]);
     setInput("");
   };
 
-  
   const toggleTask = (index) => {
     const newTasks = [...tasks];
     newTasks[index].completed = !newTasks[index].completed;
     setTasks(newTasks);
   };
 
-  
   const deleteTask = (index) => {
     setTasks(tasks.filter((_, i) => i !== index));
+  };
+
+  const editTask = (index, newText) => {
+    const newTasks = [...tasks];
+    newTasks[index].text = newText;
+    setTasks(newTasks);
   };
 
   return (
@@ -37,19 +41,14 @@ function App() {
 
       <ul style={{ listStyle: "none", padding: 0 }}>
         {tasks.map((task, index) => (
-          <li key={index} style={{ margin: "10px 0" }}>
-            <span
-              onClick={() => toggleTask(index)}
-              style={{
-                textDecoration: task.completed ? "line-through" : "none",
-                cursor: "pointer",
-                marginRight: "10px",
-              }}
-            >
-              {task.text}
-            </span>
-            <button onClick={() => deleteTask(index)}>❌</button>
-          </li>
+          <TaskItem
+            key={index}
+            index={index}
+            task={task}
+            onToggle={toggleTask}
+            onDelete={deleteTask}
+            onEdit={editTask}
+          />
         ))}
       </ul>
     </div>
